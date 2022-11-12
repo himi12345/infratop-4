@@ -1,0 +1,33 @@
+<h2>User info</h2>
+      <%#= image_tag current_user.get_profile_image(100,100) %>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <td><%= current_user.name %></td>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <!--イントロダクションある場合と内場合で場合分けしたい-->
+            <%# if current_user.introduction.any? %>
+              <td><%#= current_user.introduction %></td>
+            <%# else %>
+              <td></td>
+            <%# end %>
+          </tr>
+        </tbody>
+      </table>
+
+      <%#= link_to "人設定のマーク", edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block" %>
+      <%= link_to "編集" , edit_user_path(current_user.id) %>
+
+      <h2>New book</h2>
+      <%= form_with model:Book.new do |f| %>
+        <p>Title</p>
+        <%= f.text_field :title %>
+
+        <p>Opinion</p>
+        <%= f.text_area :book %>
+
+        <%= f.submit 'Create Book' , class:"btn-success" %>
+      <% end %>

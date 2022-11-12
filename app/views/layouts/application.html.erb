@@ -10,43 +10,43 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column vh-100">
+  <body>
     <header>
-      <nav class ="navbar navbar-expand-lg navbar-light">
+      <nav class ="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand p-3" href="/">Bookers</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNavDropdown"
+          <a class="navbar-brand" href="/">Bookers</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "Home", root_path %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Users", users_path %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Books", books_path %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Log out" , destroy_user_session_path, method: :delete %>
-              </li>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class:"mx-1 text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Users", users_path, class:"mx-1 text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Books", books_path, class:"mx-1 text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log out" , destroy_user_session_path, method: :delete, class:"mx-1 text-white" %>
+            </li>
             <% else %>
-              <li class="nav-item">
-                <%= link_to "Home", root_path %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "About", homes_about_path %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Sign Up", new_user_registration_path %>
-              </li>
-              <liclass="nav-item">
-                <%= link_to "Log in", new_user_session_path %>
-              </li>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class:"mx-1 text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "About", homes_about_path, class:"mx-1 text-white" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_user_registration_path, class:"mx-1 text-white" %>
+            </li>
+            <liclass="nav-item">
+              <%= link_to "Log in", new_user_session_path, class:"mx-1 text-white" %>
+            </li>
             <% end %>
             </ul>
           </div>
@@ -54,12 +54,18 @@
       </nav>
     </header>
 
-    <main class="mb-auto">
+  <main class="mx-auto my-2">
     <%= yield %>
-    </main>
+  </main>
 
-    <footer class="text-black d-flex align-items-center justify-content-center">
-      <p>CopyRight Infratop.inc</p>
-    </footer>
+  <footer>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="mx-auto">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

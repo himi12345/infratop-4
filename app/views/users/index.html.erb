@@ -1,1 +1,30 @@
-<h1>index_user</h1>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'books/list' %>
+    </div>
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Users</h2>
+      <table class="table">
+        <theader>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+          </tr>
+        </theader>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>a</td><!--<td>userの画像貼り付け</td>-->
+              <td><%= user.name %></td>
+              <td><%= link_to "show" , user_path(user.id)  %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>
