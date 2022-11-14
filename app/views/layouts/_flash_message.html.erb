@@ -1,0 +1,4 @@
+<!--フラッシュメッセージの部分テンプレート-->
+<% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>

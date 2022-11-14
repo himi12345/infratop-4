@@ -23,29 +23,45 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Home", root_path, class:"mx-1 text-white" %>
+              <%= link_to root_path, class:"mx-1 text-white" do %>
+                <i class="fas fa-home mr-1"></i>Home
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Users", users_path, class:"mx-1 text-white" %>
+              <%= link_to users_path, class:"mx-1 text-white" do %>
+                <i class="fas fa-users mr-1"></i>Users
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Books", books_path, class:"mx-1 text-white" %>
+              <%= link_to  books_path, class:"mx-1 text-white" do %>
+              <i class="fas fa-book-open mr-1"></i>Book
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log out" , destroy_user_session_path, method: :delete, class:"mx-1 text-white" %>
+              <%= link_to destroy_user_session_path, method: :delete, class:"mx-1 text-white" do %>
+              <i class="fas fa-sign-out-alt mr-1"></i>Log out
+              <% end %>
             </li>
             <% else %>
             <li class="nav-item">
-              <%= link_to "Home", root_path, class:"mx-1 text-white" %>
+              <%= link_to root_path, class:"mx-1 text-white" do %>
+              <i class="fas fa-home mr-1"></i>Home
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "About", homes_about_path, class:"mx-1 text-white" %>
+              <%= link_to homes_about_path, class:"mx-1 text-white" do %>
+              <i class="fas fa-link mr-1"></i>About
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Sign Up", new_user_registration_path, class:"mx-1 text-white" %>
+              <%= link_to new_user_registration_path, class:"mx-1 text-white" do %>
+              <i class="fas fa-user-plus mr-1"></i>Sign up
+              <% end %>
             </li>
             <liclass="nav-item">
-              <%= link_to "Log in", new_user_session_path, class:"mx-1 text-white" %>
+              <%= link_to new_user_session_path, class:"mx-1 text-white" do %>
+              <i class="fas fa-sign-in-alt mr-1"></i>Log in
+              <% end %>
             </li>
             <% end %>
             </ul>
