@@ -1,26 +1,21 @@
 <%= render 'layouts/flash_message' %>
 <h2>User info</h2>
-      <%#= image_tag current_user.get_image(100,100) %>
+      <%= image_tag current_user.get_profile_image(100,100) %>
       <table class="table">
         <tbody>
           <tr>
             <th>name</th>
-            <td><%= current_user.name %></td>
+            <td><%= user.name %></td>
           </tr>
           <tr>
             <th>introduction</th>
-            <!--イントロダクションある場合と内場合で場合分けしたい-->
-            <%# if current_user.introduction.any? %>
-              <td><%#= current_user.introduction %></td>
-            <%# else %>
-              <td></td>
-            <%# end %>
+            <td><%= user.introduction %></td>
           </tr>
         </tbody>
       </table>
 
       <%#= link_to "人設定のマーク", edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block" %>
-      <%= link_to edit_user_path(current_user.id),class:" btn btn-outline-secondary rounded w-100" do %>
+      <%= link_to edit_user_path(user.id),class:" btn btn-outline-secondary rounded w-100" do %>
       <i class="fas fa-user-cog"></i>
       <% end %>
 

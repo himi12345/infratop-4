@@ -23,7 +23,7 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to root_path, class:"mx-1 text-white" do %>
+              <%= link_to user_path(current_user.id), class:"mx-1 text-white" do %>
                 <i class="fas fa-home mr-1"></i>Home
               <% end %>
             </li>
@@ -34,7 +34,7 @@
             </li>
             <li class="nav-item">
               <%= link_to  books_path, class:"mx-1 text-white" do %>
-              <i class="fas fa-book-open mr-1"></i>Book
+              <i class="fas fa-book-open mr-1"></i>Books
               <% end %>
             </li>
             <li class="nav-item">
@@ -49,7 +49,7 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to homes_about_path, class:"mx-1 text-white" do %>
+              <%= link_to home_about_path, class:"mx-1 text-white" do %>
               <i class="fas fa-link mr-1"></i>About
               <% end %>
             </li>
